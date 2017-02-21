@@ -16,15 +16,17 @@ using namespace std;
 class StructureController
 {
 private:
-	Node<int> numberNode;
-	Node<string> wordNode;
-	Array<int> numberArray;
-	void testIntArray();
-	void testNodeTypes();
-	void testArrayTemplate();
+    Node<int> numberNode;
+    Node<string> wordNode;
+    Array<int> numberArray;
+
+    void testIntArray();
+    void testNodeTypes();
+    void testArrayTemplate();
 public:
-	StructureController();
-	void start();
+    StructureController();
+    void start();
+
 };
 
 #endif /* MODEL_STRUCTURECONTROLLER_H_ */

@@ -5,42 +5,26 @@
  *      Author: Kadin
  */
 
-#include "IntNodeArray.h"
-#include "Array.h"
-#include "Timer.cpp"
 #include "StructureController.h"
 #include <iostream>
+#include "IntNodeArray.h"
+#include "Array.h"
 
 using namespace std;
 
 StructureController :: StructureController()
 {
-	wordNode = Node<string>("derpy");
-	numberNode = Node<int>();
-	numberArray = Array<int>();
-}
-
-StructureCotnroller :: testArrayTemplate()
-{
-	cout << "Array Template" << endl;
-	Timer arrayTimer;
-	arrayTimer.startTimer();
-	int test[9];
-	arrayTimer.stopTimer();
-	arrayTimer.displayTimerInformation();
-	arrayTimer.resetTimer();
-	arrayTimer.startTimer();
-	numberArray = Array<int>(9);
-	arrayTimer.stopTimer();
-	arrayTimer.dispalyTimerInformation();
+    wordNode = Node<string>("derpy");
+    numberNode = Node<int>();
+    numberArray = Array<int>(1);
 }
 
 void StructureController :: testNodeTypes()
 {
-	cout << "Here is a string node" << endl;
-	cout << wordNode.getNodeData() << endl;
-	cout << "Here is a an uninitialized in node" << endl;
-	cout << numberNode.getNodeData() << endl;
+    cout << "Here is a string node" << endl;
+    cout << wordNode.getNodeData() << endl;
+    cout << "Here is an unitilialized int ndoe" << endl;
+    cout << numberNode.getNodeData() << endl;
 }
 
 void StructureController :: testIntArray()
@@ -50,7 +34,6 @@ void StructureController :: testIntArray()
     for(int spot =0; spot < 3; spot ++)
     {
         cout << temp.getFromIndex(spot) << " is at " << spot << endl;
-
     }
 
     for(int spot = 0; spot < 3; spot++)
@@ -64,9 +47,20 @@ void StructureController :: testIntArray()
     }
 }
 
+void StructureController :: testArrayTemplate()
+{
+    cout << "ArrayTemplate" << endl;
+    int test[9];
+   // numberArray = Array<int>(9);
+}
+
 void StructureController :: start()
 {
     cout << "Going to test the IntNodeArray" << endl;
     testIntArray();
     cout << "Finished IntArrayNode testing" << endl;
+
+    cout << "Testing generic nodes" << endl;
+    testNodeTypes();
+    cout << "done testing generic nodes" << endl;
 }
