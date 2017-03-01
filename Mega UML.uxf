@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>0</y>
+      <w>224</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Timer
+--
+- executionTime : clock_t
+
+--
++ startTimer() : void
++ stopTimer() : void
++ resetTimer() : void
++ displayTimerInformation() : void
++ getExecutionTimeInMicroseconds() : long
+
++ Timer() : constructor
+
+bg=white
+transparancy=0
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>567</x>
+      <y>140</y>
+      <w>203</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>IntNode
+--
+- nodeData : int
+- nodePointer : IntNode *
+
+--
++ getNodeData() : int
++ getNodePointer() : IntNode *
++ setNodeData(int) : void
++ setNodePointer(IntNode *) : void
+
++ IntNode() : constructor
++ IntNode(int) : constructor
++ IntNode(int, IntNode *) : constructor
+
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>175</y>
+      <w>182</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>IntNodeArray
+--
+- head : IntNode* 
+- size : int
+--
++ IntNodeArray(int) : constructor
++ getSize() : int
++ getFromIndex(int) : int
++ setAtIndex(int, int) : void
+
+bg=pink
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>322</y>
+      <w>315</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>Node&lt;Type&gt;
+--
+- nodeData : Type
+- nodePointer : Node&lt;Type&gt; *
+--
+Constructors
++ Node&lt;Type&gt;() : contructor
++ Node&lt;Type&gt;(Type value) : constructor
++ Node&lt;Type&gt;(Type value, Node&lt;Type&gt;* next) : constructor
+
+Accessors
+
++ getNodeData() : Type
++ getNodePointer() : Node&lt;Type&gt;*
++ setNodeData(Type value) : void
++ setNodePointer(Node&lt;Type&gt;* next) : void
+bg=cyan
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>903</x>
+      <y>322</y>
+      <w>343</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>Array&lt;Type&gt;
+--
+- front : Node&lt;Type&gt; *
+- size : int
+--
++ Array() : default contructor
++ Array&lt;Type&gt;(int size) : constructor
+
++ ~Array&lt;Type&gt;() : default destructor
++ Array&lt;Type&gt;(const Array&lt;Type&gt; &amp; toBeCopied) : copy constructor
+
++ getSize() const : int
++ getFront() const : Node&lt;Type&gt; *
+
++ getFromIndex(int index) : Type
++ setAtIndex(int index, Type value) : void
+
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>763</x>
+      <y>217</y>
+      <w>161</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..n</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>917</x>
+      <y>546</y>
+      <w>329</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>Model : List&lt;Type&gt;
+--
+- size : int
+- front : Node&lt;Type&gt; *
+- end : Node&lt;Type&gt; *
+--
++ List&lt;Type&gt;() : constructor
++ List&lt;Type&gt;(const List&lt;Type&gt; &amp; source) : copy constructor
++ ~List&lt;Type&gt;() : destructor
+
++ addAtIndex(int index, Type value) : void
++ add(Type value) : void
++ remove(int index) : Type
++ setAtIndex(int index, Type data) : Type
++ getFromIndex(int index) : Type
++ contains(Type data) : bool
++ getSize() const : int
++ getFront() const : Node&lt;Type&gt;*
++ getEnd() const : Node&lt;Type&gt; *
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>609</x>
+      <y>413</y>
+      <w>308</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..n</panel_attributes>
+    <additional_attributes>420.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>294</x>
+      <y>546</y>
+      <w>602</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>BiDirectionalNode&lt;Type&gt;
+--
+- nodeData : Type
+- nextPointer : BiDirectionalNode&lt;Type&gt; *
+- previousPointer : BiDirectionalNode&lt;Type&gt; *
+
+--
++ BiDirectionalNode&lt;Type&gt;() : constructor
++ BiDirectionalNode&lt;Type&gt;(Type value) : constructor
++ BiDirectionalNode&lt;Type&gt;(Type value, BiDirectionalNode&lt;Type&gt; * next) : constructor
++ BiDirectionalNode&lt;Type&gt;(Type value,BiDirectionalNode&lt;Type&gt; * next, BiDirectionalNode&lt;Type&gt; * previous): constructor
+
+
+
++ getNodeData() : Type
++ setNodeData() : void
++ getNextPointer() : BiDirectionalNode&lt;Type&gt; *
++ setNextPointer() : void
++ getPreviousPointer() : BiDirectionalNode&lt;Type&gt; *
++ setPreviousPointer() : void
+
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>609</x>
+      <y>434</y>
+      <w>483</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..n</panel_attributes>
+    <additional_attributes>670.0;160.0;670.0;130.0;380.0;130.0;380.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1106</x>
+      <y>21</y>
+      <w>140</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>ClassName
+--
+data members
+--
+methods and constructors</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>490</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>861</y>
+      <w>602</w>
+      <h>273</h>
+    </coordinates>
+    <panel_attributes>BiDirectionalNode&lt;Type&gt;
+--
+- nodeData : Type
+- nextPointer : BiDirectionalNode&lt;Type&gt; *
+- previousPointer : BiDirectionalNode&lt;Type&gt; *
+
+--
++ BiDirectionalNode&lt;Type&gt;() : constructor
++ BiDirectionalNode&lt;Type&gt;(Type value) : constructor
++ BiDirectionalNode&lt;Type&gt;(Type value, BiDirectionalNode&lt;Type&gt; * next) : constructor
++ BiDirectionalNode&lt;Type&gt;(Type value,BiDirectionalNode&lt;Type&gt; * next, BiDirectionalNode&lt;Type&gt; * previous): constructor
+
+
+
++ getNodeData() : Type
++ setNodeData() : void
++ getNextPointer() : BiDirectionalNode&lt;Type&gt; *
++ setNextPointer() : void
++ getPreviousPointer() : BiDirectionalNode&lt;Type&gt; *
++ setPreviousPointer() : void
+
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
