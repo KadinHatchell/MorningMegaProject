@@ -5,10 +5,11 @@
  *      Author: Kadin
  */
 
-#include "StructureController.h"
+#include "StructureController.hpp"
 #include <iostream>
-#include "IntNodeArray.h"
-#include "Array.h"
+#include "IntNodeArray.hpp"
+#include "Array.hpp"
+#include "List.h"
 
 using namespace std;
 
@@ -49,18 +50,72 @@ void StructureController :: testIntArray()
 
 void StructureController :: testArrayTemplate()
 {
-    cout << "ArrayTemplate" << endl;
-    int test[9];
-   // numberArray = Array<int>(9);
+//    cout << "ArrayTemplate" << endl;
+//    int test[9];
+//    numberArray = Array<int>(9);
+}
+
+void StructureController:: testAdvancedFeatures()
+{
+    int showDestructor = 0;
+
+    if (showDestructor < 1)
+    {
+        Array<string> words = Array<string>(5);
+        cout << "There should be messages about destructor next" << endl;
+    }
+    Array<string> words = Array<string>(4);
+    words.setAtIndex(0, "at zero");
+    words.setAtIndex(3, "in the last spot");
+    Array<string> copiedWords = Array<string>(words);
+
+    cout << "These shoud match:" << endl;
+    cout << words.getFromIndex(0) << " shoud be the same as " << copiedWords.getFromIndex(0) << endl;
+
+    copiedWords.setAtIndex(3, "Changed the contents of the copied Array");
+}
+
+void StructureController :: testList()
+{
+    List<int> sample;
+    sample.addFront(2);
+    sample.addEnd(3);
+    sample.addFront(1);
+    cout << "This should say 1 2 3" << endl;
+
+    for (int index = 0; index < sample.getSize(); index ++ )
+    {
+        cout << sample.getFromIndex(index) << endl;
+    }
+
+    cout << "Size should read 3 and is " << sample.getSize() << endl;
+
+    cout << "removing second spot" << endl;
+    cout << "the removed data should be 2 and is " << sample.remove(1) << endl;
+    cout << "size should be 2 and is " << sample.getSize() << endl;
+    cout << "list should read 1 3" << endl;
+    for (int index = 0; index < sample.getSize(); index ++ )
+    {
+        cout << sample.getFromIndex(index) << endl;
+    }
+
+
+
 }
 
 void StructureController :: start()
 {
-    cout << "Going to test the IntNodeArray" << endl;
-    testIntArray();
-    cout << "Finished IntArrayNode testing" << endl;
+//    cout << "Going to test the IntNodeArray" << endl;
+//    testIntArray();
+//    cout << "Finished IntArrayNode testing" << endl;
+//
+//    cout << "Testing generic nodes" << endl;
+//    testNodeTypes();
+//    cout << "done testing generic nodes" << endl;
 
-    cout << "Testing generic nodes" << endl;
-    testNodeTypes();
-    cout << "done testing generic nodes" << endl;
+//    cout << "testing advanced features." << endl;
+//    testAdvancedFeatures();
+//    cout << "done testing advanced features." << endl;
+
+    testList();
 }

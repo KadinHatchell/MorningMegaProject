@@ -12,42 +12,72 @@ template <class Type>
 class Node
 {
 private:
-	Type nodeData;
-	Node<Type>* nodePointer;
+    Type nodeData;
+    Node<Type>* nextPointer;
 public:
-	Node<Type>();
-	Node<Type>(Type data);
-	Node<Type>(Type data, Node * nextPointer);
+    Node();
+    Node(Type data);
+    Node(Type data, Node<Type> * nextPointer);
 
-	Type getNodeData();
-	Node<Type> * getNodePointer();
-	void setNodeData(Type value);
-	void setNodePointer(Node * nextPointer);
+    Type getNodeData();
+    Node<Type>* getNextPointer();
+    void setNodeData(Type value);
+    void setNextPointer(Node<Type>* nextPointer);
 };
 
-//Implementation section of the templated calss!
+/*
+ Implementation section of the templated class!
+ */
 
+//Constructors
 template <class Type>
 Node<Type> :: Node()
 {
-	nodePointer = nullptr;
-	//NOT Initializein
+    nextPointer = nullptr;
+    //Explicityly NOT initializing nodeData
+    //Because the type is unknown to me. It could be anything.
 }
 
 template <class Type>
-Node<Type> :: Node<Type>(Type data)
+Node<Type> :: Node(Type data)
 {
-	this-->nodeData = data;
-	this-->nodePointer = nullptr;
+    this->nodeData = data;
+    this->nextPointer = nullptr;
 }
 
 template <class Type>
-Node<Type> :: Node<Type>(Type data, Node * nextNode)
+Node<Type> :: Node(Type value, Node<Type>* nextNode)
 {
-	this-->nodeData = value;
-	this-->nodePointer = nextNode;
+    this->nodeData = value;
+    this->nextPointer = nextNode;
 }
 
 
+//Accesors aka getters/setters
+template <class Type>
+Type Node<Type> :: getNodeData()
+{
+    return nodeData;
+}
 
-#endif /* MODEL_NODE_H_ */
+template <class Type>
+Node<Type>* Node<Type> :: getNextPointer()
+{
+    return nextPointer;
+}
+
+template <class Type>
+void Node<Type> :: setNodeData(Type value)
+{
+    this->nodeData = value;
+}
+
+template <class Type>
+void Node<Type> :: setNextPointer(Node<Type>* nextPointer)
+{
+    this->nextPointer = nextPointer;
+}
+
+#endif /* Node_hpp */
+
+

@@ -9,7 +9,9 @@
 #define MODEL_STRUCTURECONTROLLER_H_
 
 #include "Node.h"
+#include "Array.h"
 #include <string>
+#include "List.h"
 
 using namespace std;
 
@@ -19,14 +21,17 @@ private:
     Node<int> numberNode;
     Node<string> wordNode;
     Array<int> numberArray;
+    List<int> sample;
 
     void testIntArray();
     void testNodeTypes();
     void testArrayTemplate();
+    void testAdvancedFeatures();
+    void testList();
 public:
     StructureController();
     void start();
 
 };
 
-#endif /* MODEL_STRUCTURECONTROLLER_H_ */
+#endif /* StructureController_hpp */
