@@ -5,8 +5,8 @@
  *      Author: Kadin
  */
 
-#include "StructureController.h"
 #include <iostream>
+#include "StructureController.h"
 #include "IntNodeArray.h"
 #include "DoubleList.h"
 #include "Array.h"
@@ -144,7 +144,7 @@ void StructureController :: testDoubleLists()
 
 void StructureController :: testListTiming()
 {
-	DoubleLists<int> timingList;
+	DoubleList<int> timingList;
 	for(int index = 0; index < 10000; index++)
 	{
 		timingList.add(rand());
