@@ -28,6 +28,10 @@ private:
     void testArrayTemplate();
     void testAdvancedFeatures();
     void testList();
+    void testDestructor();
+    void testListIntro();
+    void testDoubleLists();
+    void testListTiming();
 public:
     StructureController();
     void start();
