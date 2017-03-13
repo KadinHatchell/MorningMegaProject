@@ -52,9 +52,17 @@ void StructureController :: testIntArray()
 
 void StructureController :: testArrayTemplate()
 {
-//    cout << "ArrayTemplate" << endl;
-//    int test[9];
-//    numberArray = Array<int>(9);
+	cout << "Array Template" << endl;
+	Timer arrayTimer;
+	arrayTimer.startTimer();
+	int test [9];
+	arrayTimer.stopTimer();
+	arrayTimer.displayTimerInformation();
+	arrayTimer.resetTimer();
+	arrayTimer.startTimer();
+	numberArray = Array<int>(9);
+	arrayTimer.stopTimer();
+	arrayTimer.displayTimerInformation();
 }
 
 void StructureController:: testAdvancedFeatures()
@@ -107,19 +115,11 @@ void StructureController :: testList()
 
 void StructureController :: start()
 {
-//    cout << "Going to test the IntNodeArray" << endl;
-//    testIntArray();
-//    cout << "Finished IntArrayNode testing" << endl;
-//
-//    cout << "Testing generic nodes" << endl;
-//    testNodeTypes();
-//    cout << "done testing generic nodes" << endl;
-
-//    cout << "testing advanced features." << endl;
-//    testAdvancedFeatures();
-//    cout << "done testing advanced features." << endl;
-
-    testList();
+	 //cout << "Going to test the IntNodeArray" << endl;
+	 //testIntArray();
+	 //cout << "Finished IntNodeArray" << endl;
+	 testListIntro();
+	 testListTiming();
 }
 
 void StructureController :: testDestructor()
@@ -134,7 +134,11 @@ void StructureController :: testAdvancedFeatures()
 
 void StructureController :: testListIntro()
 {
-
+	List<int> sample;
+	sample.addFront(2);
+	sample.addEnd(3);
+	sample.addFront(1);
+	cout << "this should go 1, 2, 3." << endl;
 }
 
 void StructureController :: testDoubleLists()
@@ -145,6 +149,7 @@ void StructureController :: testDoubleLists()
 void StructureController :: testListTiming()
 {
 	DoubleList<int> timingList;
+
 	for(int index = 0; index < 10000; index++)
 	{
 		timingList.add(rand());
