@@ -4,15 +4,16 @@ Meme :: Meme()
 {
 	this->title = "Booooring";
 	this->dankness = 0;
-	this->hisperQuotient = -.9999;
+	this->hipsterQuotient = -.9999;
 	this->mainstream = true;
 }
 
 Meme :: Meme(string title)
 {
 	this->title = title;
-
-
+	this->dankness = title.length();
+	this->hipsterQuotient = 3.14;
+	this->mainstream = true;
 }
 
 string Meme :: getTitle()
