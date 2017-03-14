@@ -8,7 +8,7 @@
 #ifndef QUEUE_H_
 #define QUEUE_H_
 
-#include "DoubleLinkedList.h"
+#include "DoublyLinkedList.h"
 
 template <class Type>
 class Queue : public DoublyLinkedList<Type>
@@ -113,7 +113,7 @@ Type Queue<Type> :: dequeue()
     {
         this->setFront(removeMe->getNextPointer());
     }
-    this->setFront()->setPreviousPointer(nullptr);
+    this->getFront()->setPreviousPointer(nullptr);
 
     delete removeMe;
     this->setSize(this->getSize() - 1);

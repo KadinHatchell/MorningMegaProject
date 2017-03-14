@@ -7,6 +7,9 @@
 
 #ifndef MEME_H_
 #define MEME_H_
+
+
+#include <stdio.h>
 #include <string>
 
 using namespace std;
@@ -14,21 +17,20 @@ using namespace std;
 class Meme
 {
 private:
-	string title;
-	int dankness;
-	double hipsterQuotient;
-	bool mainstream;
+    string title;
+    int dankness;
+    double hipsterQuotient;
+    bool mainstream;
 public:
-	Meme();
-	Meme(string title);
-	int getDankness();
-	double getHipsterQuotient();
-	bool isMainstream();
-	string getTitle();
-	void setTitle(string title);
-	void setDankness(int dank);
-	void setHipsterQuotient(double hipsterQuotient);
-	void setMainStream(bool mainstream);
+    Meme();
+    Meme(string title);
+    int getDankness();
+    double getHipsterQuotient();
+    bool isMainstream();
+    string getTitle();
+    void setTitle(string title);
+    void setDankness(int dank);
+    void setHipsterQuotient(double hipsterQuotient);
+    void setMainstream(bool mainstream);
 };
-
-#endif /* MEME_H_ */
+#endif /* Meme_hpp */

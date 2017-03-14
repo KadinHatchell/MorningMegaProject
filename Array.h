@@ -157,10 +157,4 @@ Array<Type> :: Array(const Array<Type> & toBeCopied)
     }
 }
 
-
-
-
-
-
-
 #endif /* Array_hpp */

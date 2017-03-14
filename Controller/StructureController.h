@@ -8,8 +8,12 @@
 #ifndef MODEL_STRUCTURECONTROLLER_H_
 #define MODEL_STRUCTURECONTROLLER_H_
 
+
+
 #include "Node.h"
 #include "Array.h"
+#include "Queue.h"
+#include "Meme.h"
 #include <string>
 #include "List.h"
 
@@ -27,8 +31,6 @@ private:
     void testNodeTypes();
     void testArrayTemplate();
     void testAdvancedFeatures();
-    void testList();
-    void testDestructor();
     void testListIntro();
     void testDoubleLists();
     void testListTiming();

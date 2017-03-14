@@ -8,6 +8,9 @@
 #ifndef LIST_H_
 #define LIST_H_
 
+#include <assert.h>
+#include "Node.h"
+
 template <class Type>
 class List
 {
@@ -40,7 +43,7 @@ public:
 
 
 template <class Type>
-List<Type> :: List<Type>()
+List<Type> :: List()
 {
     this->size = 0;
     this->front = nullptr;
@@ -48,7 +51,7 @@ List<Type> :: List<Type>()
 }
 
 template <class Type>
-List<Type> :: List<Type>(const List<Type> & source)
+List<Type> :: List(const List<Type> & source)
 {
 
 }
@@ -56,7 +59,19 @@ List<Type> :: List<Type>(const List<Type> & source)
 template <class Type>
 List<Type> :: ~List<Type>()
 {
+    Node<Type> * destruction = front;
+    while(front != nullptr)
+    {
+        front = front->getNextPointer();
+        delete destruction;
+        destruction = front;
+    }
+}
 
+template <class Type>
+int List<Type> :: getSize() const
+{
+    return this->size;
 }
 
 template <class Type>
@@ -80,7 +95,7 @@ void List<Type> :: addFront(Type value)
         //or
         //Node<Type> * newFirst = new Node<Type>();
         //newFirst->setNodeData(value);
-        //newFirst->setNodePointer(front);
+        //newFirst->setNextPointer(front);
 
         //front now will point to the new node.
         front = newFirst;
@@ -92,7 +107,7 @@ void List<Type> :: addFront(Type value)
 template <class Type>
 void List<Type> :: addEnd(Type value)
 {
-    Node<Type> * added = new Node<Type>(data);
+    Node<Type> * added = new Node<Type>(value);
     if(size == 0)
     {
         this->front = added;
@@ -100,12 +115,135 @@ void List<Type> :: addEnd(Type value)
     }
     else
     {
-        end->setNodePointer(added);
+        end->setNextPointer(added);
         this->end = added;
     }
     size++;
 }
 
+//This method will add a node at an index with a certain value both passed as a parameter.
+//if the size is the same as the index add to end is called.
+//if the size is 0 add to front is called.
+//if the index is neither at the front or end then a new node is created with the value passed in parameter.
+//two more nodes are created to keep track of position in the list to find out where to add the new node.
+//the node before the index is now pointing to the new node and the new node will then point to the
+//next node in the list.
+template <class Type>
+void List<Type> :: addAtIndex(int index, Type value)
+{
+    assert(index >= 0 && index <= size);
+    if(size == index)
+    {
+        addEnd(value);
+    }
+    else if(size == 0)
+    {
+        addFront(value);
+    }
+    else
+    {
+        Node<Type> * insertedNode = new Node<Type>(value);
+        Node<Type> * current = front;
+        Node<Type> * previous = nullptr;
+
+        for(int position = 0; position < index; position ++)
+        {
+            previous = current;
+            current = current->getNextPointer();
+        }
+
+        previous->setNextPointer(insertedNode);
+        insertedNode->setNextPointer(current);
+
+        size++;
+    }
+}
+
+template <class Type>
+Type List<Type> :: remove(int index)
+{
+    assert(index >= 0 && index < size);
+    Type removed;
+
+    Node<Type> * current = front;
+    Node<Type> * previous = nullptr;
+    Node<Type> * toBeRemoved = nullptr;
+
+    if(index == 0)
+    {
+        toBeRemoved = front;
+        front = front->getNextPointer();
+
+    }
+    else if(index == size - 1)
+    {
+        for(int spot = 0; spot < index; spot++)
+        {
+            previous = current;
+            current = current->getNextPointer();
+        }
+
+        toBeRemoved = current;
+        previous->setNextPointer(nullptr);
+        this->end = previous;
+    }
+    else
+    {
+
+        for(int spot = 0; spot < index; spot++)
+        {
+            previous = current;
+            current = current->getNextPointer();
+        }
+
+        toBeRemoved = current;
+        current = toBeRemoved->getNextPointer();
+        previous->setNextPointer(current);
+
+    }
+    removed = toBeRemoved->getNodeData();
+
+    delete toBeRemoved;
+
+    size--;
+    return removed;
+}
+
+template <class Type>
+Type List<Type> :: setAtIndex(int index, Type data)
+{
+    assert(index >= 0 && index < size);
+    Type removedData;
+
+    Node<Type> * current = front;
+
+    for(int spot = 0; spot < index; spot++)
+    {
+        current = current->getNodePointer;
+    }
+
+    removedData = current->getNodeData();
+    current->setNodeData(data);
+
+    return removedData;
+}
+
+template <class Type>
+Type List<Type> :: getFromIndex(int index)
+{
+    assert(index >= 0 && index < size);
+    Type information;
+
+    Node<Type> * current = front;
+    for (int position = 0; position < index; position ++ )
+    {
+        current = current->getNextPointer();
+    }
+
+    information = current->getNodeData();
+
+    return information;
+}
 
 
 

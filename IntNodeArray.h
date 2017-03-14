@@ -13,13 +13,13 @@
 class IntNodeArray
 {
 private:
-	IntNode * head;
-	int size;
+    IntNode* head;
+    int size;
 public:
-	IntNodeArray(int bigness);
-	int getSize();
-	int getFromIndex(int index);
-	void setAtIndex(int index, int value);
+    IntNodeArray(int bigness);
+    int getSize();
+    int getFromIndex(int idnex);
+    void setAtIndex(int index, int value);
 };
 
-#endif
+#endif /* IntNodeArray_hpp */

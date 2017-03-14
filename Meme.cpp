@@ -1,49 +1,66 @@
+/*
+ * Meme.cpp
+ *
+ *  Created on: Feb 8, 2017
+ *      Author: Kadin
+ */
+
 #include "Meme.h"
 
 Meme :: Meme()
 {
-	this->title = "Booooring";
-	this->dankness = 0;
-	this->hipsterQuotient = -.9999;
-	this->mainstream = true;
+    this->title = "Booooring";
+    this->dankness = 0;
+    this->hipsterQuotient = -.9999;
+    this->mainstream = true;
 }
 
 Meme :: Meme(string title)
 {
-	this->title = title;
-	this->dankness = title.length();
-	this->hipsterQuotient = 3.14;
-	this->mainstream = true;
+    this->title = title;
+    this->dankness = title.length();
+    this->hipsterQuotient = 3.14;
+    this->mainstream = true;
 }
 
 string Meme :: getTitle()
 {
-	return title;
+    return title;
+}
+
+int Meme :: getDankness()
+{
+    return dankness;
+}
+
+double Meme :: getHipsterQuotient()
+{
+    return hipsterQuotient;
 }
 
 bool Meme :: isMainstream()
 {
-	return mainstream;
+    return mainstream;
 }
 
 void Meme :: setDankness(int dank)
 {
-	this->dankness = dank;
+    this->dankness = dank;
 }
 
 void Meme :: setTitle(string title)
 {
-	this->title = title;
+    this->title = title;
 }
 
 void Meme :: setHipsterQuotient(double quotient)
 {
-	this->hipsterQuotient = quotient;
+    this->hipsterQuotient = quotient;
 }
 
 void Meme :: setMainstream(bool isMain)
 {
-	this->mainstream = isMain;
+    this->mainstream = isMain;
 }
 
 

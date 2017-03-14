@@ -11,21 +11,24 @@
 class IntNode
 {
 private:
-	int nodeData;
-	IntNode * nodePointer;
+    int nodeData;
+    IntNode * nextPointer;
 public:
-	//Constructors
-	IntNode();
-	IntNode(int value);
-	/*
-	 * Creates an IntNode with a specified value and reference to the next node.
-	 */
-	IntNode(int value, IntNode * nextNode);
-	int getNodeData();
-	    IntNode* getNodePointer();
+    //constructors
+    IntNode();
+    IntNode(int value);
+    /*
+     Creates an IntNode with a specified value and reference to the next node.
+     */
+    IntNode(int value, IntNode* nextNode);
 
-	    void setNodeData(int value);
-	    void setNodePointer(IntNode* updatedNode);
+    //methods
+    int getNodeData();
+    IntNode* getNextPointer();
+
+    void setNodeData(int value);
+    void setNextPointer(IntNode* updatedNode);
+
 };
 
-#endif /* MODEL_INTNODE_H_ */
+#endif /* IntNode_hpp */

@@ -5,13 +5,12 @@
  *      Author: Kadin
  */
 
-#include <iostream>
 #include "StructureController.h"
+#include <iostream>
 #include "IntNodeArray.h"
-#include "DoubleList.h"
 #include "Array.h"
 #include "List.h"
-#include "Timer.cpp"
+
 
 using namespace std;
 
@@ -52,17 +51,9 @@ void StructureController :: testIntArray()
 
 void StructureController :: testArrayTemplate()
 {
-	cout << "Array Template" << endl;
-	Timer arrayTimer;
-	arrayTimer.startTimer();
-	int test [9];
-	arrayTimer.stopTimer();
-	arrayTimer.displayTimerInformation();
-	arrayTimer.resetTimer();
-	arrayTimer.startTimer();
-	numberArray = Array<int>(9);
-	arrayTimer.stopTimer();
-	arrayTimer.displayTimerInformation();
+//    cout << "ArrayTemplate" << endl;
+//    int test[9];
+//    numberArray = Array<int>(9);
 }
 
 void StructureController:: testAdvancedFeatures()
@@ -85,7 +76,7 @@ void StructureController:: testAdvancedFeatures()
     copiedWords.setAtIndex(3, "Changed the contents of the copied Array");
 }
 
-void StructureController :: testList()
+void StructureController :: testListIntro()
 {
     List<int> sample;
     sample.addFront(2);
@@ -113,89 +104,41 @@ void StructureController :: testList()
 
 }
 
-void StructureController :: start()
-{
-	 //cout << "Going to test the IntNodeArray" << endl;
-	 //testIntArray();
-	 //cout << "Finished IntNodeArray" << endl;
-	 testListIntro();
-	 testListTiming();
-}
-
-void StructureController :: testDestructor()
-{
-
-}
-
-void StructureController :: testAdvancedFeatures()
-{
-
-}
-
-void StructureController :: testListIntro()
-{
-	List<int> sample;
-	sample.addFront(2);
-	sample.addEnd(3);
-	sample.addFront(1);
-	cout << "this should go 1, 2, 3." << endl;
-}
-
-void StructureController :: testDoubleLists()
-{
-
-}
-
-void StructureController :: testListTiming()
-{
-	DoubleList<int> timingList;
-
-	for(int index = 0; index < 10000; index++)
-	{
-		timingList.add(rand());
-	}
-
-	long slowTime [1000];
-	long fastTime [1000];
-	double averageSlow = 0.00, averageFast = 0.00;
-	Timer doubleTimer;
-
-	for(int index = 0; index < 1000; index++)
-	{
-		int randomIndex = rand() % 10000;
-		doubleTimer.startTimer();
-		timingList.getFromIndex(randomIndex);
-		doubleTimer.stopTimer();
-		slowTime[index] = doubleTimer.getExecutionTimeInMicroseconds();
-		doubleTimer.resetTimer();
-
-		doubleTimer.startTimer();
-		timingList.getFromIndexFast(randomIndex);
-		doubleTimer.stopTimer();
-		fastTime[index] = doubleTimer.getExecutionTimeInMicroseconds();
-		doubleTimer.resetTimer();
-
-		averageSlow += slowTime[index];
-		averageFast += fastTime[index];
-	}
-
-	averageSlow = averageSlow/1000;
-	averageFast = averageFast/1000;
-
-	cout << "The average speed for the getFromIndex method was: " << averageSlow << " microseconds." << endl;
-	cout << "The average speed for the getFromIndexFast method was: " << averageFast << " microseconds." << endl;
-	cout << "A time savings?? of: " << averageSlow - averageFast << " microseconds." << endl;
-}
-
 void StructureController :: testMemeQueue()
 {
-	Meme firstMeme("toddle fist! with pinwheel");
-	Queue<Meme> memeQueue;
-	memeQueue.add(firstMeme);
-	Meme secondMeme;
-	secondMeme.setDankness(6435);
-	memeQueue.enqueue(secondMeme);
+    Meme firstMeme("salt guy");
+    Queue<Meme> memeQueue;
+    memeQueue.add(firstMeme);
+    Meme secondMeme;
+    secondMeme.setDankness(8435);
+    memeQueue.enqueue(secondMeme);
+    Meme thirdMeme("white guy blinking");
+    thirdMeme.setDankness(10000);
+    memeQueue.enqueue(thirdMeme);
 
-	Meme temp = memeQueue.dequeue();
-	cout << "This shoudl be 6435 and is: " << temp.getDankness() << endl;
+    Meme temp = memeQueue.dequeue();
+    cout << "Meme title should be salt guy and is: " << temp.getTitle() << endl;
+
+    Meme secondTemp = memeQueue.dequeue();
+    cout << "this second memes dankness should be 8435 and is: " << secondTemp.getDankness() << endl;
+
+    Meme thirdTemp = memeQueue.peek();
+    cout << "The third memes title should be white guy blinking with a dankness of 10000. Title: " << thirdTemp.getTitle() << " dankness: " << thirdTemp.getDankness() << endl;
+}
+
+void StructureController :: start()
+{
+//    cout << "Going to test the IntNodeArray" << endl;
+//    testIntArray();
+//    cout << "Finished IntArrayNode testing" << endl;
+//
+//    cout << "Testing generic nodes" << endl;
+//    testNodeTypes();
+//    cout << "done testing generic nodes" << endl;
+
+//    cout << "testing advanced features." << endl;
+//    testAdvancedFeatures();
+//    cout << "done testing advanced features." << endl;
+    testMemeQueue();
+
 }

@@ -8,7 +8,7 @@
 #ifndef DOUBLELIST_H_
 #define DOUBLELIST_H_
 
-#include "DoubleLinkedList.h"
+#include "DoublyLinkedList.h"
 
 template <class Type>
 class DoubleList : public DoublyLinkedList<Type>
@@ -36,42 +36,42 @@ Type DoubleList<Type> :: getFromIndex(int index)
 template <class Type>
 void DoubleList<Type> :: add(Type value)
 {
-	BiDirectionalNode<Type> * addedNode = new BiDirectionalNode<Type>(value);
-	if(this->getSize() == 0)
-	{
-		this->setFront(addedNode);
+    BiDirectionalNode<Type> * addedNode = new BiDirectionalNode<Type>(value);
+    if(this->getSize() == 0)
+    {
+        this->setFront(addedNode);
 
-	}
-	else
-	{
-		this->getEnd()->setNextPointer(addedNode);
-		addNode->setPreviousPointer(this->getEnd());
-	}
-	this->setEnd(addedNode);
-	this->setSize(this->getSize() + 1);
+    }
+    else
+    {
+        this->getEnd()->setNextPointer(addedNode);
+        addNode->setPreviousPointer(this->getEnd());
+    }
+    this->setEnd(addedNode);
+    this->setSize(this->getSize() + 1);
 }
 
 template <class Type>
 Type DoubleList<Type> :: remove(int index)
 {
-	Type derp;
-	BiDirectionalNode<Type> * nodeToTakeOut = this->getFront();
-	for(int spot = 0; spot < index; spot++)
-	{
-		nodeToTakeOut = nodeToTakeOut->getNextPointer();
-	}
-	derp = nodeToTakeOut->getNodeData();
+    Type derp;
+    BiDirectionalNode<Type> * nodeToTakeOut = this->getFront();
+    for(int spot = 0; spot < index; spot++)
+    {
+        nodeToTakeOut = nodeToTakeOut->getNextPointer();
+    }
+    derp = nodeToTakeOut->getNodeData();
 
-	BiDirectionalNode<Type> * prev = nodeToTakeOut->getPreviousPointer();
-	BiDirectionalNode<Type> * prev = nodeToTakeOut->getNextPointer();
+    BiDirectionalNode<Type> * prev = nodeToTakeOut->getPreviousPointer();
+    BiDirectionalNode<Type> * prev = nodeToTakeOut->getNextPointer();
 
-	prev->setNextPointer(next);
-	next->setPreviousPointer(previous);
+    prev->setNextPointer(next);
+    next->setPreviousPointer(previous);
 
-	delete nodeToTakeOut;
+    delete nodeToTakeOut;
 
-	this->setSize(this-getSize() - 1);
-	return derp;
+    this->setSize(this-getSize() - 1);
+    return derp;
 }
 
 #endif /* DoubleList_h */
