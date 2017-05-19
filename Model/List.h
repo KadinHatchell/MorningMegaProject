@@ -2,8 +2,8 @@
 //  List.h
 //  MegaProject
 //
-//  Created by Powley, Matthew on 2/21/17.
-//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//  Created by Kadin on 2/21/17.
+//  Copyright © 2017 PKadin. All rights reserved.
 //
 
 #ifndef List_h

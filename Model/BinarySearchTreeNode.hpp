@@ -2,8 +2,8 @@
 //  BinarySearchTreeNode.hpp
 //  MegaProject
 //
-//  Created by Powley, Matthew on 4/11/17.
-//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//  Created by Kadin on 4/11/17.
+//  Copyright © 2017 Kadin. All rights reserved.
 //
 
 #ifndef BinarySearchTreeNode_h

@@ -2,8 +2,8 @@
 //  Graph.hpp
 //  MegaProject
 //
-//  Created by Matt Powley on 5/10/17.
-//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//  Created by Kadin on 5/10/17.
+//  Copyright © 2017 Kadin. All rights reserved.
 //
 
 #ifndef Graph_h

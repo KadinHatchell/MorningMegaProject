@@ -2,8 +2,8 @@
 //  Timer.hpp
 //  MegaProject
 //
-//  Created by Matt Powley on 3/27/17.
-//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//  Created by Kadin on 3/27/17.
+//  Copyright © 2017 Kadin. All rights reserved.
 //
 
 #ifndef Timer_hpp

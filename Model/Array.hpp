@@ -2,8 +2,8 @@
 //  Array.hpp
 //  MegaProject
 //
-//  Created by Matt Powley on 2/20/17.
-//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//  Created by Kadin on 2/20/17.
+//  Copyright © 2017 Kadin. All rights reserved.
 //
 
 #ifndef Array_hpp

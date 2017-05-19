@@ -2,8 +2,8 @@
 //  FileController.hpp
 //  MegaProject
 //
-//  Created by Powley, Matthew on 3/29/17.
-//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//  Created by Kadin on 3/29/17.
+//  Copyright © 2017 Kadin. All rights reserved.
 //
 
 #ifndef FileController_hpp

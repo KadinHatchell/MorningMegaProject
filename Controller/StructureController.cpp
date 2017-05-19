@@ -2,8 +2,8 @@
 //  StructureController.cpp
 //  MegaProject
 //
-//  Created by Powley, Matthew on 2/8/17.
-//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//  Created by Kadin on 2/8/17.
+//  Copyright © 2017 Kadin. All rights reserved.
 //
 
 #include "StructureController.hpp"
@@ -241,15 +241,15 @@ void StructureController :: testBinarySearchTree()
     cout << "Tree has nothing in it, size should be 0 and is " << numbers.getSize() << endl;
     
     cout << "Adding values to the list" << endl;
-    numbers.insert(9843);
-    numbers.insert(10);
-    numbers.insert(43);
-    numbers.insert(-123);
-    numbers.insert(23465);
+    numbers.insert(1578);
+    numbers.insert(75);
+    numbers.insert(91);
+    numbers.insert(-468);
+    numbers.insert(71357);
     numbers.insert(10); // won't go in
-    numbers.insert(43243);
-    numbers.insert(-45677654);
-    numbers.insert(92165);
+    numbers.insert(75394);
+    numbers.insert(-469724);
+    numbers.insert(4583);
     
     
     
@@ -428,8 +428,8 @@ void StructureController :: start()
    // testDoubleListTiming();
     //testNumberStack();
     
-    //testBinarySearchTree();
-    testGraph();
+    testBinarySearchTree();
+    //testGraph();
     //hashTableUse();
 
 }
