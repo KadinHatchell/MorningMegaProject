@@ -1,15 +1,16 @@
-/*
- * Runner.cpp
- *
- *  Created on: Feb 8, 2017
- *      Author: Kadin
- */
+//
+//  Runner.cpp
+//  MegaProject
+//
+//  Created by Powley, Matthew on 2/8/17.
+//  Copyright © 2017 Powley, Matthew. All rights reserved.
+//
 
-#include "StructureController.cpp"
+#include "StructureController.hpp"
 
 int main()
 {
-	StructureController * app = new StructureController();
-	app->start();
-	return 0;
+    StructureController * app = new StructureController();
+    app->start();
+    return 0;
 }
