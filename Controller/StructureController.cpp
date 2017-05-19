@@ -362,11 +362,11 @@ void StructureController :: testGraph()
 {
     Graph<string> myGraph;
     
-    myGraph.addVertex("lacrosse");
-    myGraph.addVertex("Brighton");
-    myGraph.addVertex("computer science");
-    myGraph.addVertex("Drone videos");
-    myGraph.addVertex("Mavic Pro");
+    myGraph.addVertex("Dogs");
+    myGraph.addVertex("Are");
+    myGraph.addVertex("Really");
+    myGraph.addVertex("Cool");
+    myGraph.addVertex("Doods");
     myGraph.addEdge(0,1);
     myGraph.addEdge(0,2);
     myGraph.addEdge(0,4);
@@ -385,16 +385,16 @@ void StructureController :: hashTableUse()
 {
     HashTable<string> myHashTable;
     
-    myHashTable.add("CTEC");
-    myHashTable.add("computer science");
-    myHashTable.add("lacrosse");
-    myHashTable.add("summer");
-    myHashTable.add("drone");
-    myHashTable.add("brighton");
-    myHashTable.add("lifeguard");
-    myHashTable.add("pool");
-    myHashTable.add("hash");
-    myHashTable.add("mavic pro");
+    myHashTable.add("dogs");
+    myHashTable.add("are");
+    myHashTable.add("really");
+    myHashTable.add("cool");
+    myHashTable.add("and");
+    myHashTable.add("do");
+    myHashTable.add("loud");
+    myHashTable.add("bork");
+    myHashTable.add("when");
+    myHashTable.add("startled");
     
     
     cout << "The size of my hash table is: " << myHashTable.getSize() << endl;
