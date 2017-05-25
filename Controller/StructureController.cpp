@@ -428,8 +428,8 @@ void StructureController :: start()
    // testDoubleListTiming();
     //testNumberStack();
     
-    testBinarySearchTree();
+    //();
     //testGraph();
-    //hashTableUse();
+    hashTableUse();
 
 }
